@@ -68,7 +68,6 @@
             this.textBoxDelay.Size = new System.Drawing.Size(100, 20);
             this.textBoxDelay.TabIndex = 2;
             this.textBoxDelay.Text = "150";
-            this.textBoxDelay.KeyPress += textBoxDelay_KeyPress;
             // 
             // textBoxRepeat
             // 
@@ -77,7 +76,6 @@
             this.textBoxRepeat.Size = new System.Drawing.Size(100, 20);
             this.textBoxRepeat.TabIndex = 3;
             this.textBoxRepeat.Text = "10";
-            this.textBoxRepeat.KeyPress += textBoxRepeat_KeyPress;
             // 
             // buttonSet
             // 
@@ -87,7 +85,6 @@
             this.buttonSet.TabIndex = 4;
             this.buttonSet.Text = "Set";
             this.buttonSet.UseVisualStyleBackColor = true;
-            this.buttonSet.Click += buttonSet_Click;
             // 
             // buttonReset
             // 
@@ -97,7 +94,6 @@
             this.buttonReset.TabIndex = 5;
             this.buttonReset.Text = "Reset";
             this.buttonReset.UseVisualStyleBackColor = true;
-            this.buttonReset.Click += buttonReset_Click;
             // 
             // labelResult
             // 
@@ -132,7 +128,6 @@
             this.buttonClear.TabIndex = 9;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += buttonClear_Click;
             // 
             // labelVersion
             // 
@@ -152,7 +147,6 @@
             this.linkLabelSource.TabIndex = 11;
             this.linkLabelSource.TabStop = true;
             this.linkLabelSource.Text = "github Source";
-            this.linkLabelSource.LinkClicked += linkLabelSource_LinkClicked;
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);

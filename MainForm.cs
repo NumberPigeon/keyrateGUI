@@ -15,6 +15,17 @@ namespace KeyRateGUI
         public MainForm()
         {
             InitializeComponent();
+            InitializeComponentFunctions();
+        }
+
+        private void InitializeComponentFunctions()
+        {
+            textBoxDelay.KeyPress += textBoxDelay_KeyPress;
+            textBoxRepeat.KeyPress += textBoxRepeat_KeyPress;
+            buttonSet.Click += buttonSet_Click;
+            buttonReset.Click += buttonReset_Click;
+            buttonClear.Click += buttonClear_Click;
+            linkLabelSource.LinkClicked += linkLabelSource_LinkClicked;
         }
 
         private void textBoxDelay_KeyPress(object sender, KeyPressEventArgs e)
