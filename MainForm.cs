@@ -14,6 +14,7 @@ namespace KeyRateGUI
     {
         public MainForm()
         {
+            ConfigController.LoadConfig();
             InitializeComponent();
             InitializeComponentFunctions();
         }
@@ -26,10 +27,15 @@ namespace KeyRateGUI
             buttonReset.Click += buttonReset_Click;
             buttonClear.Click += buttonClear_Click;
             linkLabelSource.LinkClicked += linkLabelSource_LinkClicked;
+            // set repeat, delay and autosave
+            textBoxDelay.Text = ConfigController.DelayMSec.ToString();
+            textBoxRepeat.Text = ConfigController.RepeatMSec.ToString();
+            checkBoxSaveSettings.Checked = ConfigController.AutoSave;
         }
 
         private void textBoxDelay_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             if (e.KeyChar == 8)
             {
                 return;
@@ -38,7 +44,7 @@ namespace KeyRateGUI
             {
                 e.Handled = true;
             }
-            else if (textBoxDelay.Text.Length > 3)
+            else if (textBoxDelay.Text.Length > 3 && textBoxDelay.SelectedText.Length == 0)
             {
                 e.Handled = true;
             }
@@ -54,7 +60,7 @@ namespace KeyRateGUI
             {
                 e.Handled = true;
             }
-            else if (textBoxRepeat.Text.Length > 3)
+            else if (textBoxRepeat.Text.Length > 3 && textBoxDelay.SelectedText.Length == 0)
             {
                 e.Handled = true;
             }
@@ -79,6 +85,13 @@ namespace KeyRateGUI
                 textBoxTest.Text = string.Empty;
                 labelResult.ForeColor = Color.Green;
                 labelResult.Text = "Keyrate set successfully!";
+
+                if (ConfigController.AutoSave)
+                {
+                    ConfigController.DelayMSec = delay;
+                    ConfigController.RepeatMSec = repeat;
+                    ConfigController.SaveConfig();
+                }
             }
             else
             {
@@ -118,6 +131,12 @@ namespace KeyRateGUI
                 FileName = uri
             };
             System.Diagnostics.Process.Start(psi);
+        }
+
+        private void checkBoxSaveSettings_CheckedChanged(object sender, EventArgs e)
+        {
+            ConfigController.AutoSave = checkBoxSaveSettings.Checked;
+            ConfigController.SaveConfig();
         }
     }
 }

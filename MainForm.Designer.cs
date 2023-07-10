@@ -41,6 +41,7 @@
             this.buttonClear = new System.Windows.Forms.Button();
             this.labelVersion = new System.Windows.Forms.Label();
             this.linkLabelSource = new System.Windows.Forms.LinkLabel();
+            this.checkBoxSaveSettings = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // labelDelay
@@ -79,7 +80,7 @@
             // 
             // buttonSet
             // 
-            this.buttonSet.Location = new System.Drawing.Point(28, 101);
+            this.buttonSet.Location = new System.Drawing.Point(28, 121);
             this.buttonSet.Name = "buttonSet";
             this.buttonSet.Size = new System.Drawing.Size(78, 23);
             this.buttonSet.TabIndex = 4;
@@ -88,7 +89,7 @@
             // 
             // buttonReset
             // 
-            this.buttonReset.Location = new System.Drawing.Point(126, 101);
+            this.buttonReset.Location = new System.Drawing.Point(126, 121);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(78, 23);
             this.buttonReset.TabIndex = 5;
@@ -98,7 +99,7 @@
             // labelResult
             // 
             this.labelResult.AutoSize = true;
-            this.labelResult.Location = new System.Drawing.Point(28, 141);
+            this.labelResult.Location = new System.Drawing.Point(28, 161);
             this.labelResult.Name = "labelResult";
             this.labelResult.Size = new System.Drawing.Size(25, 13);
             this.labelResult.TabIndex = 6;
@@ -107,7 +108,7 @@
             // labelTest
             // 
             this.labelTest.AutoSize = true;
-            this.labelTest.Location = new System.Drawing.Point(21, 178);
+            this.labelTest.Location = new System.Drawing.Point(21, 198);
             this.labelTest.Name = "labelTest";
             this.labelTest.Size = new System.Drawing.Size(139, 13);
             this.labelTest.TabIndex = 7;
@@ -115,14 +116,14 @@
             // 
             // textBoxTest
             // 
-            this.textBoxTest.Location = new System.Drawing.Point(22, 199);
+            this.textBoxTest.Location = new System.Drawing.Point(22, 219);
             this.textBoxTest.Name = "textBoxTest";
             this.textBoxTest.Size = new System.Drawing.Size(107, 20);
             this.textBoxTest.TabIndex = 8;
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(138, 197);
+            this.buttonClear.Location = new System.Drawing.Point(138, 217);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(69, 23);
             this.buttonClear.TabIndex = 9;
@@ -132,26 +133,40 @@
             // labelVersion
             // 
             this.labelVersion.AutoSize = true;
-            this.labelVersion.Location = new System.Drawing.Point(26, 242);
+            this.labelVersion.Location = new System.Drawing.Point(26, 262);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(37, 13);
             this.labelVersion.TabIndex = 10;
-            this.labelVersion.Text = "v1.0.0";
+            this.labelVersion.Text = "v1.1.0";
             // 
             // linkLabelSource
             // 
             this.linkLabelSource.AutoSize = true;
-            this.linkLabelSource.Location = new System.Drawing.Point(24, 259);
+            this.linkLabelSource.Location = new System.Drawing.Point(24, 279);
             this.linkLabelSource.Name = "linkLabelSource";
             this.linkLabelSource.Size = new System.Drawing.Size(73, 13);
             this.linkLabelSource.TabIndex = 11;
             this.linkLabelSource.TabStop = true;
             this.linkLabelSource.Text = "github Source";
+            // 
+            // checkBoxSaveSettings
+            // 
+            this.checkBoxSaveSettings.AutoSize = true;
+            this.checkBoxSaveSettings.Location = new System.Drawing.Point(68, 93);
+            this.checkBoxSaveSettings.Name = "checkBoxSaveSettings";
+            this.checkBoxSaveSettings.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.checkBoxSaveSettings.Size = new System.Drawing.Size(92, 17);
+            this.checkBoxSaveSettings.TabIndex = 12;
+            this.checkBoxSaveSettings.Text = "Save Settings";
+            this.checkBoxSaveSettings.UseVisualStyleBackColor = true;
+            this.checkBoxSaveSettings.CheckedChanged += new System.EventHandler(this.checkBoxSaveSettings_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(234, 311);
+            this.Controls.Add(this.checkBoxSaveSettings);
             this.Controls.Add(this.linkLabelSource);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.buttonClear);
@@ -188,6 +203,7 @@
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Label labelVersion;
         private System.Windows.Forms.LinkLabel linkLabelSource;
+        private System.Windows.Forms.CheckBox checkBoxSaveSettings;
     }
 }
 

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigController.cs" />
     <Compile Include="KeyRateController.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
